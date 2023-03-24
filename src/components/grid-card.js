@@ -13,7 +13,7 @@ const GridCard = (props) => {
         className="grid-card-image"
       />
       <span className="grid-card-text">{props.text}</span>
-      <span className="Content-Light">{props.text1}</span>
+      <span className="grid-card-text1">{props.text1}</span>
     </div>
   )
 }

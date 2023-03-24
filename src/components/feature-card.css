@@ -17,13 +17,27 @@
   padding-bottom: var(--dl-space-space-unit);
 }
 .feature-card-text {
+  font-size: 20px;
+  font-style: normal;
   text-align: center;
+  font-family: Lexend;
+  font-weight: 500;
+  line-height: 1.2;
   margin-bottom: var(--dl-space-space-unit);
+  text-transform: none;
+  text-decoration: none;
 }
 .feature-card-text1 {
   color: var(--dl-color-grays-gray100);
+  font-size: 16px;
+  font-style: normal;
   text-align: center;
+  font-family: Lexend;
+  font-weight: 300;
+  line-height: 1.75;
   margin-bottom: var(--dl-space-space-unit);
+  text-transform: none;
+  text-decoration: none;
 }
 @media(max-width: 767px) {
   .feature-card-card {
