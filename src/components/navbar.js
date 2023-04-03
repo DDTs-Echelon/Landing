@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import NavigationLinks from './navigation-links'
-import './navbar.css'
+import NavigationLinks from "./navigation-links";
+import "./navbar.css";
+import MobileNavbar from "./mobile-navbar";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Button } from "@mui/material";
 
 const Navbar = (props) => {
   return (
@@ -19,22 +22,21 @@ const Navbar = (props) => {
             className="navbar-image"
           />
         </div>
-        <div data-role="BurgerMenu" className="navigation-burger-menu">
+        <div className="mobile-navbar">
+          <MobileNavbar />
+        </div>
+        {/* <div data-role="BurgerMenu" className="navigation-burger-menu">
           <svg viewBox="0 0 1024 1024" className="navbar-icon">
             <path
               d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
               className=""
             ></path>
+            <MobileNavbar />
           </svg>
         </div>
         <div data-role="MobileMenu" className="navigation-mobile-menu">
           <div className="navbar-nav1">
             <div className="navbar-container">
-              {/* <img
-                alt={props.image_alt1}
-                src={props.image_src1}
-                className="navbar-image1"
-              /> */}
               <div data-role="CloseMobileMenu" className="navbar-menu-close">
                 <svg viewBox="0 0 1024 1024" className="navbar-icon02">
                   <path
@@ -48,9 +50,13 @@ const Navbar = (props) => {
               rootClassName="navigation-links-root-class-name11"
               className=""
             ></NavigationLinks>
-            <button className="navbar-primary-btn button-primary button">
+            <a
+              href="#home"
+              className="navbar-primary-btn button-primary button"
+              data-role="CloseMobileMenu"
+            >
               {props.PrimaryBtn1}
-            </button>
+            </a>
           </div>
           <div className="navbar-social-media">
             <span className="navbar-text">{props.text}</span>
@@ -94,7 +100,7 @@ const Navbar = (props) => {
               </svg>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <nav className="navbar-container2"> */}
         <div className="navlink-display">
           <NavigationLinks
@@ -102,29 +108,26 @@ const Navbar = (props) => {
             className=""
           ></NavigationLinks>
         </div>
-          <a
-            href="#Register here form"
-            className="navbar-primary-btn1 button-primary button"
-          >
-            {props.PrimaryBtn}
-          </a>
+        <a href="#home" className="navbar-primary-btn1 button-primary button">
+          {props.PrimaryBtn}
+        </a>
         {/* </nav> */}
       </header>
     </div>
-  )
-}
+  );
+};
 
 Navbar.defaultProps = {
   image_src:
-    'https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/127a250e-7417-4827-a461-64fff661e938/a0ef4872-e5a5-480f-8184-693b48008576?org_if_sml=14928',
-  image_src1: 'https://play.teleporthq.io/static/svg/placeholders/no-image.svg',
-  rootClassName: '',
-  image_alt1: 'image',
-  text: 'Follow us',
-  image_alt: 'image',
-  PrimaryBtn: 'Join Us',
-  PrimaryBtn1: 'Get started',
-}
+    "https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/127a250e-7417-4827-a461-64fff661e938/a0ef4872-e5a5-480f-8184-693b48008576?org_if_sml=14928",
+  image_src1: "https://play.teleporthq.io/static/svg/placeholders/no-image.svg",
+  rootClassName: "",
+  image_alt1: "image",
+  text: "Follow us",
+  image_alt: "image",
+  PrimaryBtn: "Join Us",
+  PrimaryBtn1: "Get started",
+};
 
 Navbar.propTypes = {
   image_src: PropTypes.string,
@@ -135,6 +138,6 @@ Navbar.propTypes = {
   image_alt: PropTypes.string,
   PrimaryBtn: PropTypes.string,
   PrimaryBtn1: PropTypes.string,
-}
+};
 
-export default Navbar
+export default Navbar;

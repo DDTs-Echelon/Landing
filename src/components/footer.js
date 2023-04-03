@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import './footer.css'
+import "./footer.css";
+import SocialMedia from "./primitives/social-media";
 
 const Footer = (props) => {
   return (
@@ -26,7 +27,7 @@ const Footer = (props) => {
           <div className="footer-social-media">
             <span className="footer-text4">Follow us</span>
             <div className="footer-container1">
-              <a
+              {/* <a
                 href="https://www.facebook.com/ddts.echelon/"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -72,21 +73,22 @@ const Footer = (props) => {
                     className=""
                   ></path>
                 </svg>
-              </a>
+              </a> */}
+              <SocialMedia />
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 Footer.defaultProps = {
-  rootClassName: '',
-}
+  rootClassName: "",
+};
 
 Footer.propTypes = {
   rootClassName: PropTypes.string,
-}
+};
 
-export default Footer
+export default Footer;

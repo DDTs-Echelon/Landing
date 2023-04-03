@@ -1,7 +1,7 @@
 .footer-footer {
   border-color: rgba(33, 33, 33, 0.1);
   border-width: 1px;
-  background-color: #29133F;
+  background-color: #29133f;
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -57,7 +57,7 @@
   flex-direction: column;
 }
 .footer-text4 {
-  color: #FF661F;
+  color: #ff661f;
   font-size: 18px;
   align-self: center;
   font-style: normal;
@@ -109,9 +109,9 @@
   cursor: pointer;
 }
 .footer-root-class-name {
-  background-color: #29133F;
+  background-color: #29133f;
 }
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .footer-max-width {
     flex-direction: column-reverse;
   }
@@ -119,7 +119,7 @@
     width: 100%;
   }
 }
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .footer-image {
     width: 365px;
     height: 51px;

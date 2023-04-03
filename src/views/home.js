@@ -7,40 +7,14 @@ import Copyright from "../components/copyright";
 import GetStarted from "../components/forms/get-started";
 import "./home.css";
 import { Box } from "@mui/material";
+import { testimonials } from "../components/primitives/testimonials";
 
 const Home = (props) => {
   return (
     <div className="home-container">
       <Navbar rootClassName="navbar-root-class-name"></Navbar>
-      <div id="Register here form" className="home-feature-card input">
-        <img
-          alt="image"
-          src="/playground_assets/logo-monogram-black-500h.png"
-          className="home-image"
-        />
-        <span className="home-text">Register Here</span>
-        <form className="home-form">
-          <input
-            type="text"
-            required
-            placeholder="Enter your full name"
-            className="home-textinput input"
-          />
-          <input
-            type="text"
-            required
-            placeholder="Your phone number"
-            className="home-textinput1 input"
-          />
-          <input
-            type="text"
-            placeholder="Your email address"
-            className="home-textinput2 input"
-          />
-        </form>
-      </div>
       <main className="home-main">
-        <div className="section-container home-hero">
+        <div id="home" className="section-container home-hero">
           <div className="home-max-width max-content-container">
             <div className="home-content-container">
               <h1 className="home-text01">
@@ -279,22 +253,16 @@ const Home = (props) => {
             </h2>
           </div>
           <div data-type="slider" className="home-slider">
-            <Slide rootClassName="slide-root-class-name2"></Slide>
-            <Slide
-              Role="DESIGN DIRECTOR"
-              Author="Bill Smith"
-              image_src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-              Testimonial='“Stunning app! I use it everyday since I discovered it and love it every since. It really makes newsreading a pleasure. I enjoy all the customization options available, super highly recommended!"'
-              Testimonial2="Super highly recommended!”"
-              rootClassName="slide-root-class-name"
-            ></Slide>
-            <Slide
-              Role="FREELANCE WRITER"
-              Author="Julia Xang"
-              image_src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-              Testimonial="“Feedbox is very easy to use and flexible! I especially like the pre-made templates that are accessible; they're extraordinary for monitoring a few feed sources and various RSS Feeds together.”"
-              rootClassName="slide-root-class-name1"
-            ></Slide>
+            {testimonials.map((testimonial) => (
+              <Slide
+                key={testimonial.id}
+                Role={testimonial.Role}
+                Author={testimonial.Author}
+                image_src={testimonial.image_src}
+                Testimonial={testimonial.Testimonial}
+                rootClassName="slide-root-class-name"
+              ></Slide>
+            ))}
           </div>
         </div>
         <hr style={{ width: "90%", border: "solid 1px grey" }} />
@@ -375,7 +343,10 @@ const Home = (props) => {
             </div>
           </div>
         </div>
-        <hr style={{ width: "90%", border: "solid 1px grey" }} />
+        <hr
+          style={{ width: "90%", border: "solid 1px grey" }}
+          className="hr-last-main"
+        />
       </main>
       <Footer rootClassName="footer-root-class-name"></Footer>
       <Copyright></Copyright>
